@@ -140,13 +140,58 @@
             color: var(--gold-dark);
             opacity: 0.5;
         }
+        /* Separador decorativo */
+        .artwork-divider {
+            width: 100%;
+            max-width: 600px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 2rem auto 2rem;
+            opacity: 0;
+            transition: opacity 1s ease 0.5s;
+        }
+        .artwork-divider.active { opacity: 1; }
+        .artwork-divider::before,
+        .artwork-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-dark) 30%, var(--gold-dark) 70%, transparent);
+            opacity: 0.4;
+        }
+        .artwork-divider-ornament {
+            padding: 0 2rem;
+            font-size: 1.2rem;
+            color: var(--gold-primary);
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            letter-spacing: 0.3em;
+            animation: ornament-glow 3s ease-in-out infinite;
+        }
+        .artwork-divider-ornament::before {
+            content: '◆';
+        }
+        @keyframes ornament-glow {
+            0%, 100% { 
+                opacity: 0.6;
+                text-shadow: 0 0 10px rgba(201, 169, 98, 0.3);
+            }
+            50% { 
+                opacity: 1;
+                text-shadow: 0 0 20px rgba(201, 169, 98, 0.6),
+                             0 0 30px rgba(201, 169, 98, 0.3);
+            }
+        }
         .description-panel {
-            margin-top: 1rem;
+            margin-top: 0;
             max-width: 700px;
             text-align: center;
             opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease 0.3s;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.8s;
         }
         .description-panel.active { opacity: 1; transform: translateY(0); }
         .description-panel.hide-panel { display: none; }
@@ -259,6 +304,9 @@
             <div class="artwork-wrapper" data-artwork="about">
                 <img id="about-img" class="about-photo" alt="Magdalena Luz María Cáceres Améstica">
             </div>
+        </div>
+        <div class="artwork-divider active" id="divider">
+            <div class="artwork-divider-ornament"></div>
         </div>
         <div class="description-panel active" id="description">
             <h2 class="description-title" id="desc-title">Cabos Sueltos</h2>
