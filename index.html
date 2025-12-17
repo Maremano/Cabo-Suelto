@@ -209,14 +209,14 @@
         }
         .carousel-controls {
             position: absolute;
-            top: 50%;
+            bottom: 0.5rem;
             width: 100%;
             left: 0;
             right: 0;
-            transform: translateY(-50%);
             display: flex;
-            justify-content: space-between;
-            padding: 0 1rem;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
             z-index: 10;
             pointer-events: none;
         }
@@ -236,10 +236,6 @@
             color: var(--bg-white);
         }
         .carousel-indicators {
-            position: absolute;
-            bottom: 0.5rem;
-            left: 50%;
-            transform: translateX(-50%);
             display: flex;
             gap: 0.5rem;
             z-index: 15;
@@ -415,7 +411,7 @@
             .carousel-container { height: 450px; }
             .logo { font-size: 1.2rem; }
             .carousel-controls {
-                padding: 0 0.5rem;
+                gap: 1rem;
             }
             .carousel-btn {
                 padding: 0.4rem 0.8rem;
@@ -466,15 +462,15 @@
                     <p class="carousel-title">Biography Jurídica</p>
                     <img src="obra5-biography-juridica.png" class="carousel-image" alt="Biography Jurídica" onclick="showArtwork(5)">
                 </div>
-                <div class="carousel-indicators">
-                    <span class="indicator active" onclick="goToSlide(0)"></span>
-                    <span class="indicator" onclick="goToSlide(1)"></span>
-                    <span class="indicator" onclick="goToSlide(2)"></span>
-                    <span class="indicator" onclick="goToSlide(3)"></span>
-                    <span class="indicator" onclick="goToSlide(4)"></span>
-                </div>
                 <div class="carousel-controls">
                     <button class="carousel-btn" onclick="prevSlide()">←</button>
+                    <div class="carousel-indicators">
+                        <span class="indicator active" onclick="goToSlide(0)"></span>
+                        <span class="indicator" onclick="goToSlide(1)"></span>
+                        <span class="indicator" onclick="goToSlide(2)"></span>
+                        <span class="indicator" onclick="goToSlide(3)"></span>
+                        <span class="indicator" onclick="goToSlide(4)"></span>
+                    </div>
                     <button class="carousel-btn" onclick="nextSlide()">→</button>
                 </div>
             </div>
